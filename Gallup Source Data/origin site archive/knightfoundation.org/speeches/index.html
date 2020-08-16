@@ -1,0 +1,1515 @@
+	<!doctype html>
+	<html lang="en-US">
+	<head>
+		<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b4222721b8",applicationID:"204779344"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="https://gmpg.org/xfn/11">
+		<!-- Open Graph tags and Twitter Card -->
+		<meta property="og:description" content="">
+		<meta property="og:image" content="">
+		<meta property="og:site_name" content="Knight Foundation">
+		<meta property="og:title" content="Speeches">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://knightfoundation.org/speeches/">
+		<meta name="twitter:site" content="@knightfdn">
+		<meta name="twitter:card" content="summary_large_image">
+					<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-282115-15"></script> 			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'UA-282115-15');
+			</script>
+			<!-- End Global site tag (gtag.js) - Google Analytics -->
+			<!-- Google Tag Manager -->
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-5JM9GMN');</script>
+			<!-- End Google Tag Manager -->
+			
+		<title>Speeches &#8211; Knight Foundation</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Knight Foundation &raquo; Feed" href="https://knightfoundation.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Knight Foundation &raquo; Comments Feed" href="https://knightfoundation.org/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Knight Foundation &raquo; Speeches Feed" href="https://knightfoundation.org/speeches/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/knightfoundation.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://knightfoundation.org/wp-includes/css/dist/block-library/style.min.css?ver=5.5' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='knight-foundation-app-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500%2C700%7CRoboto+Condensed%3A300%2C400%2C700&#038;ver=1.0.0' media='all' />
+<link rel='stylesheet' id='knight-foundation-app-global-css-css'  href='https://knightfoundation.org/wp-content/themes/knight-foundation-app/client/build/css/global.51bb2c4d99cb52020a85.min.css?ver=1.0.6' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://knightfoundation.org/wp-content/mu-plugins/jetpack/css/jetpack.css?ver=8.8.1' media='all' />
+<link rel="https://api.w.org/" href="https://knightfoundation.org/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://knightfoundation.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://knightfoundation.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.5" />
+<style type='text/css'>img#wpstats{display:none}</style><link rel="icon" href="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=32" sizes="32x32" />
+<link rel="icon" href="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=192" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=180" />
+<meta name="msapplication-TileImage" content="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=270" />
+	</head>
+
+	<body class="archive post-type-archive post-type-archive-speech wp-custom-logo hfeed">
+			<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JM9GMN"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		<header id="header" class="site-header" data-component="siteHeader">
+	<div class="site-header__container">
+		<div class="site-header__branding">
+			<h1 class="site-header__title">
+				<a class="logo" href="https://knightfoundation.org/" rel="home">
+	<span class="logo__logomark">
+		<svg width="57" height="57" viewBox="0 0 161 161" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g style="mix-blend-mode:normal"><use xlink:href="#path0_fill" transform="translate(.67)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path1_fill" transform="translate(39.58 34.33)" fill="#FFF" style="mix-blend-mode:normal"/></g><defs><path id="path0_fill" d="M160.21 0H0v160.21h160.21V0z"/><path id="path1_fill" d="M50.35 18.31v18.31h38.91v18.31H50.35v36.62L20.74 45.78 50.35 0h43.49v18.31H50.35zM0 56.2v35.35h22.87L0 56.2zM22.87 0H0v35.35L22.87 0z"/></defs></svg>
+	</span>
+	<span class="logo__logo">
+		<svg width="200" height="57" viewBox="0 0 567 161" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g style="mix-blend-mode:normal"><use xlink:href="#path0_fill" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path1_fill" transform="translate(38.91 34.33)" fill="#FFF" style="mix-blend-mode:normal"/><use xlink:href="#path2_fill" transform="translate(202.11 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path3_fill" transform="translate(242.35 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path4_fill" transform="translate(283.7 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path5_fill" transform="translate(307.08 27.75)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path6_fill" transform="translate(349.55 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path7_fill" transform="translate(388.24 28.51)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path8_fill" transform="translate(202.1 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path9_fill" transform="translate(231.91 94.6)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path10_fill" transform="translate(273.84 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path11_fill" transform="translate(315.69 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path12_fill" transform="translate(358.12 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path13_fill" transform="translate(392.25 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path14_fill" transform="translate(430.82 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path15_fill" transform="translate(468.41 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path16_fill" transform="translate(491.92 94.6)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path17_fill" transform="translate(533.81 95.32)" fill="#010101" style="mix-blend-mode:normal"/></g><defs><path id="path0_fill" d="M160.21 0H0v160.21h160.21V0z"/><path id="path1_fill" d="M50.35 18.31v18.31h38.91v18.31H50.35v36.62L20.74 45.78 50.35 0h43.49v18.31H50.35zM0 56.2v35.35h22.87L0 56.2zM22.87 0H0v35.35L22.87 0z"/><path id="path2_fill" d="M8.99 17.04l14-17h10L18.84 16.8l15.37 24.12H23.75L12.84 24 9 28.57v12.31H0V0h9l-.01 17.04z"/><path id="path3_fill" d="M22.5 40.88L8.36 13.53v27.35H0V0h10.58L24.2 27.74V0h8.35v40.88H22.5z"/><path id="path4_fill" d="M13.09 35.09h4.12v5.79H0v-5.79h4.12V5.79H0V0h17.21v5.79h-4.12v29.3z"/><path id="path5_fill" d="M18.21 20.84h14.87v21.44H27.4l-.89-4.79a12.738 12.738 0 0 1-10.25 4.79C6.01 42.28 0 35.28 0 22.06 0 6.46 7.58 0 18 0c9 0 14.15 5.29 14.2 14.93l-8.86.67c-.11-6.74-2.73-8.46-6-8.46-4.34 0-7.85 3.4-7.85 14.54 0 10 3.29 13.54 8.19 13.54 3.79 0 7.24-2.4 7.46-7.85h-7l.07-6.53z"/><path id="path6_fill" d="M32 40.88h-9.08V24.33H9v16.6H0V0h9v16.88h13.92V0H32v40.88z"/><path id="path7_fill" d="M10.8 7.3H0V0h30.69v7.3H19.88v33.59H10.8V7.3z"/><path id="path8_fill" d="M22.15 24.62H9v16.26H0V0h24.12v7.3H9v10.25h13.15v7.07z"/><path id="path9_fill" d="M0 21.33C0 7.74 7 0 18.1 0c11.36 0 16.87 7.57 16.87 20.66 0 13.76-6 21.61-17.71 21.61S0 34.64 0 21.33zm25.51-.5c0-9.47-2.45-13.59-7.68-13.59-5.07 0-8.35 4.07-8.35 13.81s2.49 14.16 8.06 14.16c5.41 0 7.97-4.25 7.97-14.38z"/><path id="path10_fill" d="M23.23 0h8.91v26.23c0 9.75-5.24 15.32-16.32 15.32C4.07 41.55 0 35.65 0 25.9V0h8.86v23.49c0 7.13 1.39 10.86 7.24 10.86 5.85 0 7.13-3.45 7.13-10.81V0z"/><path id="path11_fill" d="M22.49 40.88L8.35 13.49v27.35H0V0h10.58l13.59 27.74V0h8.35v40.88H22.49z"/><path id="path12_fill" d="M0 40.88V0h10c15.48 0 21.45 6.8 21.45 19.61 0 14.2-6 21.28-21.55 21.28L0 40.88zm11.2-7.39c7.18 0 11-3.34 11-13.37 0-9.64-3.45-12.87-11-12.87H9.03v26.24h2.17z"/><path id="path13_fill" d="M24.75 0l13.76 40.88H29.3l-3.16-9.39H12L9 40.9H0L13.48.02 24.75 0zm-5.74 8.3h-.11l-5 16.26h10.3L19.01 8.3z"/><path id="path14_fill" d="M10.8 7.3H0V0h30.73v7.3H19.88v33.59H10.8V7.3z"/><path id="path15_fill" d="M13.14 35.09h4.12v5.79H0v-5.79h4.14V5.79H.02V0h17.21v5.79h-4.09v29.3z"/><path id="path16_fill" d="M0 21.33C0 7.74 7 0 18.1 0c11.36 0 16.87 7.57 16.87 20.66 0 13.76-6 21.61-17.71 21.61S0 34.64 0 21.33zm25.51-.5c0-9.47-2.45-13.59-7.68-13.59-5.07 0-8.35 4.07-8.35 13.81s2.49 14.16 8.06 14.16c5.41 0 7.97-4.25 7.97-14.38z"/><path id="path17_fill" d="M22.5 40.88L8.35 13.49v27.35H0V0h10.58l13.59 27.74V0h8.35v40.88H22.5z"/></defs></svg>
+	</span>
+	<span class="screen-reader-text">
+		Knight Foundation	</span>
+</a>
+			</h1>
+		</div><!-- .site-branding -->
+		<div class="menu-primary-navigation-container"><ul id="primary" class="site-header__nav"><li id="menu-item-152279" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152279"><a href="https://knightfoundation.org/programs/">Programs</a></li>
+<li id="menu-item-62873" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62873"><a href="https://knightfoundation.org/topics/">Topics</a></li>
+<li id="menu-item-152325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152325"><a href="https://knightfoundation.org/research/">Research</a></li>
+<li id="menu-item-152281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152281"><a href="https://knightfoundation.org/about/">About</a></li>
+</ul></div>		<div class="site-header__search" data-component="Search">
+			<button class="search-form__trigger" aria-controls="site-header-search">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><style>.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><path class="st0" d="M15.7 14.3l-3.1-3.1C13.5 10 14 8.6 14 7c0-3.9-3.1-7-7-7S0 3.1 0 7s3.1 7 7 7c1.6 0 3-.5 4.2-1.4l3.1 3.1c.2.2.5.3.7.3.3 0 .5-.1.7-.3.4-.4.4-1 0-1.4zM7 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" id="Zoom_2_x2C__Magnifying_Glass_2_1_"/></svg>
+			</button>
+			<div id="site-header-search" class="search-form__container" tabindex="-1" aria-hidden="true">
+				<div class="search-form__inner">
+					<form
+	class="search-form search-form--context-header"
+	role="search"
+	method="get"
+	action="https://knightfoundation.org/"
+>
+	<label class="search-form__label" for="search-form">
+		<span>
+			Search:		</span>
+	</label>
+	<div class="search-form__form">
+		<input
+			type="search"
+			id="search-form"
+			class="search-form__field"
+			placeholder="Search"
+			value=""
+			name="s"
+		/>
+		<button class="search-form__button--submit search-form__button">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><style>.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><path class="st0" d="M15.7 14.3l-3.1-3.1C13.5 10 14 8.6 14 7c0-3.9-3.1-7-7-7S0 3.1 0 7s3.1 7 7 7c1.6 0 3-.5 4.2-1.4l3.1 3.1c.2.2.5.3.7.3.3 0 .5-.1.7-.3.4-.4.4-1 0-1.4zM7 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" id="Zoom_2_x2C__Magnifying_Glass_2_1_"/></svg>
+		</button>
+	</div>
+</form>
+				</div>
+			</div>
+			<button class="search-form__close" aria-controls="site-header-search">
+				<svg xmlns="http://www.w3.org/2000/svg" width="10.5" height="10.5" viewBox="0 0 10.5 10.5"><path d="M6.7 5.2l3.5-3.5c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0L5.2 3.8 1.7.3C1.3-.1.7-.1.3.3s-.4 1 0 1.4l3.5 3.5L.3 8.8c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l3.5-3.5 3.5 3.5c.4.4 1 .4 1.4 0 .4-.4.4-1 0-1.4L6.7 5.2z"/></svg>
+			</button>
+		</div><!-- .site-search -->
+	</div>
+	<div class="site-subnav__container" data-component="Subheader">
+	<div class="menu-topics-secondary-container"><ul id="topics" class="site-header__subnav"><li id="menu-item-62876" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62876"><a href="https://knightfoundation.org/topics/">Topics</a></li>
+<li id="menu-item-180594" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-180594"><a href="/articles">Articles</a></li>
+<li id="menu-item-152321" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152321"><a href="https://knightfoundation.org/press/">Press</a></li>
+<li id="menu-item-152322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152322 current-menu-item"><a href="https://knightfoundation.org/speeches/">Speeches</a></li>
+</ul></div>		</div>
+		
+	</div>
+</header>
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main">
+
+					
+<!-- Entry header: browse Speeches -->
+<header
+								class="entry-header sm-pad"
+					>
+	<div class="entry-title-wrap">
+		<h1 class="entry-title">
+			<span>Browse Speeches</span>
+		</h1>
+	</div>
+</header><!-- .entry-header -->
+
+<div class="speech__wrapper site-content">
+
+	<!-- Speeches listing (21) -->
+	<div class="block--type--curated-content">
+		<ul class="block__cards
+					noscroll
+		"
+	>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fadvancing-a-critical-new-field-of-research-sam-gill-at-the-university-of-washingtons-center-for-an-informed-public-opening-event%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Advancing%20a%20new%20field%20of%20research%3A%20Sam%20Gill%20at%20University%20of%20Washington%26%238217%3Bs%20Center%20for%20an%20Informed%20Public%20opening&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fadvancing-a-critical-new-field-of-research-sam-gill-at-the-university-of-washingtons-center-for-an-informed-public-opening-event%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fadvancing-a-critical-new-field-of-research-sam-gill-at-the-university-of-washingtons-center-for-an-informed-public-opening-event%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#cdf2beb8afa7a8aeb9f09ea5acbfa8a9edabbfa2a0ed86a3a4aaa5b9ed8ba2b8a3a9acb9a4a2a3ebafa2a9b4f0a5b9b9bdbef7e2e2a6a3a4aaa5b9aba2b8a3a9acb9a4a2a3e3a2bfaae2bebda8a8aea5a8bee2aca9bbaca3aea4a3aae0ace0aebfa4b9a4aeaca1e0a3a8bae0aba4a8a1a9e0a2abe0bfa8bea8acbfaea5e0beaca0e0aaa4a1a1e0acb9e0b9a5a8e0b8a3a4bba8bfbea4b9b4e0a2abe0baacbea5a4a3aab9a2a3bee0aea8a3b9a8bfe0aba2bfe0aca3e0a4a3aba2bfa0a8a9e0bdb8afa1a4aee0a2bda8a3a4a3aae0a8bba8a3b9e2" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/advancing-a-critical-new-field-of-research-sam-gill-at-the-university-of-washingtons-center-for-an-informed-public-opening-event/">
+				Advancing a new field of research: Sam Gill at University of Washington&#8217;s Center for an Informed Public opening			</a>
+			</div>
+		</div>
+				<div class="card__image">
+			<a href="https://knightfoundation.org/speeches/advancing-a-critical-new-field-of-research-sam-gill-at-the-university-of-washingtons-center-for-an-informed-public-opening-event/">
+			<img width="1024" height="683" src="https://knightfoundation.org/wp-content/uploads/2019/12/20191203_CIP-Launch_0323.jpg?w=1024" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://knightfoundation.org/wp-content/uploads/2019/12/20191203_CIP-Launch_0323.jpg 5264w, https://knightfoundation.org/wp-content/uploads/2019/12/20191203_CIP-Launch_0323.jpg?resize=768,512 768w, https://knightfoundation.org/wp-content/uploads/2019/12/20191203_CIP-Launch_0323.jpg?resize=1536,1024 1536w, https://knightfoundation.org/wp-content/uploads/2019/12/20191203_CIP-Launch_0323.jpg?resize=2048,1365 2048w" sizes="(max-width: 1024px) 100vw, 1024px" />			</a>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fmiami-s-biggest-challenges-are-merely-calls-to-leadership%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Miami%E2%80%99s%20biggest%20challenges%20are%20merely%20new%20calls%20to%20leadership%3A%20Ibarg%C3%BCen&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fmiami-s-biggest-challenges-are-merely-calls-to-leadership%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fmiami-s-biggest-challenges-are-merely-calls-to-leadership%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#18276b6d7a727d7b6c254b70796a7d7c387e6a7775385376717f706c385e776d767c796c7177763e7a777c6125706c6c686b2237377376717f706c7e776d767c796c71777636776a7f376b687d7d7b707d6b377571797571356b357a717f7f7d6b6c357b707974747d767f7d6b35796a7d35757d6a7d7461357b7974746b356c7735747d797c7d6a6b70716837" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/miami-s-biggest-challenges-are-merely-calls-to-leadership/">
+				Miami’s biggest challenges are merely new calls to leadership: Ibargüen			</a>
+			</div>
+		</div>
+				<div class="card__image">
+			<a href="https://knightfoundation.org/speeches/miami-s-biggest-challenges-are-merely-calls-to-leadership/">
+			<img width="1024" height="673" src="https://knightfoundation.org/wp-content/uploads/2019/09/Image_2019-07-01_at_2.37.07_PM.png?w=1024" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://knightfoundation.org/wp-content/uploads/2019/09/Image_2019-07-01_at_2.37.07_PM.png 1564w, https://knightfoundation.org/wp-content/uploads/2019/09/Image_2019-07-01_at_2.37.07_PM.png?resize=768,505 768w, https://knightfoundation.org/wp-content/uploads/2019/09/Image_2019-07-01_at_2.37.07_PM.png?resize=1536,1010 1536w" sizes="(max-width: 1024px) 100vw, 1024px" />			</a>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-public-spaces-forum-2019%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=In%20Support%20of%20Public%20Spaces%3A%20Knight%20Public%20Spaces%20Forum%202019&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-public-spaces-forum-2019%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-public-spaces-forum-2019%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#fac5898f98909f998ec7a9929b889f9eda9c889597dab194939d928edabc958f949e9b8e939594dc98959e83c7928e8e8a89c0d5d59194939d928e9c958f949e9b8e939594d495889dd5898a9f9f99929f89d59194939d928ed78a8f98969399d7898a9b999f89d79c95888f97d7c8cacbc3d5" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/knight-public-spaces-forum-2019/">
+				In Support of Public Spaces: Knight Public Spaces Forum 2019			</a>
+			</div>
+		</div>
+				<div class="card__image">
+			<a href="https://knightfoundation.org/speeches/knight-public-spaces-forum-2019/">
+			<img width="1024" height="683" src="https://knightfoundation.org/wp-content/uploads/2019/09/Albert_Yee_a.jpg?w=1024" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://knightfoundation.org/wp-content/uploads/2019/09/Albert_Yee_a.jpg 3000w, https://knightfoundation.org/wp-content/uploads/2019/09/Albert_Yee_a.jpg?resize=768,512 768w, https://knightfoundation.org/wp-content/uploads/2019/09/Albert_Yee_a.jpg?resize=1536,1024 1536w, https://knightfoundation.org/wp-content/uploads/2019/09/Albert_Yee_a.jpg?resize=2048,1365 2048w" sizes="(max-width: 1024px) 100vw, 1024px" />			</a>
+		</div>
+				</li>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-media-forum-2019%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Knight%20Media%20Forum%202019%20%26%238211%3B%20Welcome%20by%20Knight%20President%20Alberto%20Ibarg%C3%BCen&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-media-forum-2019%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-media-forum-2019%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#91aee2e4f3fbf4f2e5acc2f9f0e3f4f5b1f7e3fefcb1dafff8f6f9e5b1d7fee4fff5f0e5f8feffb7f3fef5e8acf9e5e5e1e2abbebefafff8f6f9e5f7fee4fff5f0e5f8feffbffee3f6bee2e1f4f4f2f9f4e2befafff8f6f9e5bcfcf4f5f8f0bcf7fee3e4fcbca3a1a0a8be" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/knight-media-forum-2019/">
+				Knight Media Forum 2019 &#8211; Welcome by Knight President Alberto Ibargüen			</a>
+			</div>
+		</div>
+				<div class="card__image">
+			<a href="https://knightfoundation.org/speeches/knight-media-forum-2019/">
+			<img width="1024" height="683" src="https://knightfoundation.org/wp-content/uploads/2019/09/ai.jpg?w=1024" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://knightfoundation.org/wp-content/uploads/2019/09/ai.jpg 2048w, https://knightfoundation.org/wp-content/uploads/2019/09/ai.jpg?resize=768,512 768w, https://knightfoundation.org/wp-content/uploads/2019/09/ai.jpg?resize=1536,1024 1536w" sizes="(max-width: 1024px) 100vw, 1024px" />			</a>
+		</div>
+				</li>
+					<li class="block__card card arts">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-arts-miami-celebration%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Knight%20Arts%20Miami%20Celebration&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-arts-miami-celebration%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-arts-miami-celebration%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#d4eba7a1b6beb1b7a0e987bcb5a6b1b0f4b2a6bbb9f49fbabdb3bca0f492bba1bab0b5a0bdbbbaf2b6bbb0ade9bca0a0a4a7eefbfbbfbabdb3bca0b2bba1bab0b5a0bdbbbafabba6b3fba7a4b1b1b7bcb1a7fbbfbabdb3bca0f9b5a6a0a7f9b9bdb5b9bdf9b7b1b8b1b6a6b5a0bdbbbafb" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Arts / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/knight-arts-miami-celebration/">
+				Knight Arts Miami Celebration			</a>
+			</div>
+		</div>
+				<div class="card__image">
+			<a href="https://knightfoundation.org/speeches/knight-arts-miami-celebration/">
+			<img width="1024" height="683" src="https://knightfoundation.org/wp-content/uploads/2019/06/Alberto_Ibargüen10.jpg?w=1024" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://knightfoundation.org/wp-content/uploads/2019/06/Alberto_Ibargüen10.jpg 3000w, https://knightfoundation.org/wp-content/uploads/2019/06/Alberto_Ibargüen10.jpg?resize=768,512 768w, https://knightfoundation.org/wp-content/uploads/2019/06/Alberto_Ibargüen10.jpg?resize=1536,1024 1536w, https://knightfoundation.org/wp-content/uploads/2019/06/Alberto_Ibargüen10.jpg?resize=2048,1365 2048w" sizes="(max-width: 1024px) 100vw, 1024px" />			</a>
+		</div>
+				</li>
+					<li class="block__card card arts">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fart-binds-people-to-place-and-to-each-other%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Art%20Binds%20People%20to%20Place%20and%20to%20Each%20Other&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fart-binds-people-to-place-and-to-each-other%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fart-binds-people-to-place-and-to-each-other%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#84bbf7f1e6eee1e7f0b9d7ece5f6e1e0a4e2f6ebe9a4cfeaede3ecf0a4c2ebf1eae0e5f0edebeaa2e6ebe0fdb9ecf0f0f4f7beababefeaede3ecf0e2ebf1eae0e5f0edebeaaaebf6e3abf7f4e1e1e7ece1f7abe5f6f0a9e6edeae0f7a9f4e1ebf4e8e1a9f0eba9f4e8e5e7e1a9e5eae0a9f0eba9e1e5e7eca9ebf0ece1f6ab" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Arts / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/art-binds-people-to-place-and-to-each-other/">
+				Art Binds People to Place and to Each Other			</a>
+			</div>
+		</div>
+				<div class="card__image">
+			<a href="https://knightfoundation.org/speeches/art-binds-people-to-place-and-to-each-other/">
+			<img width="1024" height="549" src="https://knightfoundation.org/wp-content/uploads/2019/06/Image_2018-06-14_at_2.49.52_PM.png?w=1024" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://knightfoundation.org/wp-content/uploads/2019/06/Image_2018-06-14_at_2.49.52_PM.png 1537w, https://knightfoundation.org/wp-content/uploads/2019/06/Image_2018-06-14_at_2.49.52_PM.png?resize=768,412 768w" sizes="(max-width: 1024px) 100vw, 1024px" />			</a>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-media-forum-welcome-speech-2018%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Knight%20Media%20Forum%20Welcome%20Speech%202018&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-media-forum-welcome-speech-2018%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fknight-media-forum-welcome-speech-2018%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#2d125e584f47484e59107e454c5f48490d4b5f42400d6643444a45590d6b425843494c594442430b4f424954104559595d5e1702024643444a45594b425843494c5944424303425f4a025e5d48484e45485e024643444a455900404849444c004b425f5840005a48414e424048005e5d48484e45001f1d1c1502" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/knight-media-forum-welcome-speech-2018/">
+				Knight Media Forum Welcome Speech 2018			</a>
+			</div>
+		</div>
+				<div class="card__image">
+			<a href="https://knightfoundation.org/speeches/knight-media-forum-welcome-speech-2018/">
+			<img width="1024" height="683" src="https://knightfoundation.org/wp-content/uploads/2019/06/25546531897_eebb98ecef_o.jpg?w=1024" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://knightfoundation.org/wp-content/uploads/2019/06/25546531897_eebb98ecef_o.jpg 2400w, https://knightfoundation.org/wp-content/uploads/2019/06/25546531897_eebb98ecef_o.jpg?resize=768,512 768w, https://knightfoundation.org/wp-content/uploads/2019/06/25546531897_eebb98ecef_o.jpg?resize=1536,1024 1536w, https://knightfoundation.org/wp-content/uploads/2019/06/25546531897_eebb98ecef_o.jpg?resize=2048,1365 2048w" sizes="(max-width: 1024px) 100vw, 1024px" />			</a>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fdemocracy-civic-engagement-and-the-role-of-the-free-press%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Democracy%2C%20civic%20engagement%20and%20the%20role%20of%20the%20free%20press&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fdemocracy-civic-engagement-and-the-role-of-the-free-press%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fdemocracy-civic-engagement-and-the-role-of-the-free-press%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#e2dd91978088878196dfb18a83908786c284908d8fc2a98c8b858a96c2a48d978c8683968b8d8cc4808d869bdf8a96969291d8cdcd898c8b858a96848d978c8683968b8d8ccc8d9085cd91928787818a8791cd86878f8d819083819bcf818b948b81cf878c858385878f878c96cf838c86cf968a87cf908d8e87cf8d84cf968a87cf84908787cf9290879191cd" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/democracy-civic-engagement-and-the-role-of-the-free-press/">
+				Democracy, civic engagement and the role of the free press			</a>
+			</div>
+		</div>
+				<div class="card__image">
+			<a href="https://knightfoundation.org/speeches/democracy-civic-engagement-and-the-role-of-the-free-press/">
+			<img width="532" height="465" src="https://knightfoundation.org/wp-content/uploads/2019/06/Screen_Shot_2017-05-30_at_11.45.09_AM.png?w=532" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" />			</a>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fhow-information-fuels-the-power-of-our-democracy%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=How%20information%20fuels%20the%20power%20of%20our%20democracy&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fhow-information-fuels-the-power-of-our-democracy%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fhow-information-fuels-the-power-of-our-democracy%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#96a9e5e3f4fcf3f5e2abc5fef7e4f3f2b6f0e4f9fbb6ddf8fff1fee2b6d0f9e3f8f2f7e2fff9f8b0f4f9f2efabfee2e2e6e5acb9b9fdf8fff1fee2f0f9e3f8f2f7e2fff9f8b8f9e4f1b9e5e6f3f3f5fef3e5b9fef9e1bbfff8f0f9e4fbf7e2fff9f8bbf0e3f3fae5bbe2fef3bbe6f9e1f3e4bbf9f0bbf9e3e4bbf2f3fbf9f5e4f7f5efb9" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/how-information-fuels-the-power-of-our-democracy/">
+				How information fuels the power of our democracy			</a>
+			</div>
+		</div>
+				<div class="card__image">
+			<a href="https://knightfoundation.org/speeches/how-information-fuels-the-power-of-our-democracy/">
+			<img width="1024" height="682" src="https://knightfoundation.org/wp-content/uploads/2019/06/32066664613_71c6dab918_h.jpg?w=1024" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://knightfoundation.org/wp-content/uploads/2019/06/32066664613_71c6dab918_h.jpg 1600w, https://knightfoundation.org/wp-content/uploads/2019/06/32066664613_71c6dab918_h.jpg?resize=768,512 768w, https://knightfoundation.org/wp-content/uploads/2019/06/32066664613_71c6dab918_h.jpg?resize=1536,1023 1536w" sizes="(max-width: 1024px) 100vw, 1024px" />			</a>
+		</div>
+				</li>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fmarty-baron-asne-2016-speech%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Embracing%20challenges%3A%20Transformation%20and%20optimism%20at%20The%20Washington%20Post&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fmarty-baron-asne-2016-speech%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fmarty-baron-asne-2016-speech%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#e6d99593848c838592dbb58e87948382c68094898bc6ad888f818e92c6a08993888287928f8988c08489829fdb8e92929695dcc9c98d888f818e92808993888287928f8988c8899481c995968383858e8395c98b8794929fcb8487948988cb87958883cbd4d6d7d0cb95968383858ec9" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/marty-baron-asne-2016-speech/">
+				Embracing challenges: Transformation and optimism at The Washington Post			</a>
+			</div>
+		</div>
+				<div class="card__image">
+			<a href="https://knightfoundation.org/speeches/marty-baron-asne-2016-speech/">
+			<img width="1024" height="1163" src="https://knightfoundation.org/wp-content/uploads/2019/06/Marty_Baron_2016.jpeg?w=1024" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://knightfoundation.org/wp-content/uploads/2019/06/Marty_Baron_2016.jpeg 3231w, https://knightfoundation.org/wp-content/uploads/2019/06/Marty_Baron_2016.jpeg?resize=768,872 768w, https://knightfoundation.org/wp-content/uploads/2019/06/Marty_Baron_2016.jpeg?resize=1353,1536 1353w, https://knightfoundation.org/wp-content/uploads/2019/06/Marty_Baron_2016.jpeg?resize=1804,2048 1804w" sizes="(max-width: 1024px) 100vw, 1024px" />			</a>
+		</div>
+				</li>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Falberto-ibarguen-reporters-committee-freedom-press%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Ibarg%C3%BCen%20accepts%20Freedom%20of%20the%20Press%20Award%20from%20Reporters%20Committee&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Falberto-ibarguen-reporters-committee-freedom-press%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Falberto-ibarguen-reporters-committee-freedom-press%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#a798d4d2c5cdc2c4d39af4cfc6d5c2c387c1d5c8ca87ecc9cec0cfd387e1c8d2c9c3c6d3cec8c981c5c8c3de9acfd3d3d7d49d8888ccc9cec0cfd3c1c8d2c9c3c6d3cec8c989c8d5c088d4d7c2c2c4cfc2d488c6cbc5c2d5d3c88acec5c6d5c0d2c2c98ad5c2d7c8d5d3c2d5d48ac4c8cacaced3d3c2c28ac1d5c2c2c3c8ca8ad7d5c2d4d488" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/alberto-ibarguen-reporters-committee-freedom-press/">
+				Ibargüen accepts Freedom of the Press Award from Reporters Committee			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card arts">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fremarks-knight-president-alberto-ibarguen-debut-sy%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Remarks%20by%20Knight%20President%20Alberto%20Ibarg%C3%BCen%20on%20the%20debut%20of%C2%A0%20%E2%80%98Symphony%20in%20D%E2%80%99%20by%20the%20Detroit%20Symphony%20Orchestra%2C%20Max%20M.%20Fisher%20Music%20Center%2C%20Detroit%2C%20Nov.%2021%2C%202015&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fremarks-knight-president-alberto-ibarguen-debut-sy%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fremarks-knight-president-alberto-ibarguen-debut-sy%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#f0cf8385929a959384cda39891829594d096829f9dd0bb9e99979884d0b69f859e949184999f9ed6929f9489cd9884848083cadfdf9b9e99979884969f859e949184999f9ede9f8297df8380959593989583df82959d91829b83dd9b9e99979884dd808295839994959e84dd919c929582849fdd999291829785959edd9495928584dd8389df" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Arts / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/remarks-knight-president-alberto-ibarguen-debut-sy/">
+				Remarks by Knight President Alberto Ibargüen on the debut of  ‘Symphony in D’ by the Detroit Symphony Orchestra, Max M. Fisher Music Center, Detroit, Nov. 21, 2015			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Falberto-ibarguen-addresses-sipconnect2015-miami%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Alberto%20Ibarg%C3%BCen%20addresses%20SIPCONNECT2015%20in%20Miami&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Falberto-ibarguen-addresses-sipconnect2015-miami%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Falberto-ibarguen-addresses-sipconnect2015-miami%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#2b14585e49414e485f1678434a594e4f0b4d5944460b6045424c435f0b6d445e454f4a5f4244450d49444f5216435f5f5b581104044045424c435f4d445e454f4a5f4244450544594c04585b4e4e48434e58044a47494e595f440642494a594c5e4e45064a4f4f594e58584e580658425b484445454e485f191b1a1e0646424a464204" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/alberto-ibarguen-addresses-sipconnect2015-miami/">
+				Alberto Ibargüen addresses SIPCONNECT2015 in Miami			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card ">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fjuan-j-martinez-remarks-cybersecuritys-brave-new-w%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Juan%20J.%20Martinez%20remarks%20at%20%26%238216%3BCybersecurity%26%238217%3Bs%20Brave%20New%20World%26%238217%3B%20on%202%2F28%2F15&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fjuan-j-martinez-remarks-cybersecuritys-brave-new-w%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fjuan-j-martinez-remarks-cybersecuritys-brave-new-w%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#dee1adabbcb4bbbdaae38db6bfacbbbafeb8acb1b3fe95b0b7b9b6aafe98b1abb0babfaab7b1b0f8bcb1baa7e3b6aaaaaeade4f1f1b5b0b7b9b6aab8b1abb0babfaab7b1b0f0b1acb9f1adaebbbbbdb6bbadf1b4abbfb0f3b4f3b3bfacaab7b0bba4f3acbbb3bfacb5adf3bda7bcbbacadbbbdabacb7aaa7adf3bcacbfa8bbf3b0bba9f3a9f1" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/juan-j-martinez-remarks-cybersecuritys-brave-new-w/">
+				Juan J. Martinez remarks at &#8216;Cybersecurity&#8217;s Brave New World&#8217; on 2/28/15			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Falberto-ibarguen-remarks-national-press-foundation%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Alberto%20Ibarg%C3%BCen%20accepts%20award%20at%20National%20Press%20Foundation&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Falberto-ibarguen-remarks-national-press-foundation%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Falberto-ibarguen-remarks-national-press-foundation%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#ad92ded8cfc7c8ced990fec5ccdfc8c98dcbdfc2c08de6c3c4cac5d98debc2d8c3c9ccd9c4c2c38bcfc2c9d490c5d9d9ddde978282c6c3c4cac5d9cbc2d8c3c9ccd9c4c2c383c2dfca82deddc8c8cec5c8de82ccc1cfc8dfd9c280c4cfccdfcad8c8c380dfc8c0ccdfc6de80c3ccd9c4c2c3ccc180dddfc8dede80cbc2d8c3c9ccd9c4c2c382" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/alberto-ibarguen-remarks-national-press-foundation/">
+				Alberto Ibargüen accepts award at National Press Foundation			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fnew-war-journalists%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=THE%20NEW%20WAR%20ON%20JOURNALISTS&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fnew-war-journalists%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fnew-war-journalists%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#dae5a9afb8b0bfb9aee789b2bba8bfbefabca8b5b7fa91b4b3bdb2aefa9cb5afb4bebbaeb3b5b4fcb8b5bea3e7b2aeaeaaa9e0f5f5b1b4b3bdb2aebcb5afb4bebbaeb3b5b4f4b5a8bdf5a9aabfbfb9b2bfa9f5b4bfadf7adbba8f7b0b5afa8b4bbb6b3a9aea9f5" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/new-war-journalists/">
+				THE NEW WAR ON JOURNALISTS			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fstrong-cities-strong-communities-northwest-indiana%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Strong%20Cities%2C%20%20%20Strong%20Communities%20Northwest%20Indiana&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fstrong-cities-strong-communities-northwest-indiana%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fstrong-cities-strong-communities-northwest-indiana%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#9ca3efe9fef6f9ffe8a1cff4fdeef9f8bcfaeef3f1bcd7f2f5fbf4e8bcdaf3e9f2f8fde8f5f3f2bafef3f8e5a1f4e8e8ecefa6b3b3f7f2f5fbf4e8faf3e9f2f8fde8f5f3f2b2f3eefbb3efecf9f9fff4f9efb3efe8eef3f2fbb1fff5e8f5f9efb1efe8eef3f2fbb1fff3f1f1e9f2f5e8f5f9efb1f2f3eee8f4ebf9efe8b1f5f2f8f5fdf2fdb3" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/strong-cities-strong-communities-northwest-indiana/">
+				Strong Cities,   Strong Communities Northwest Indiana			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Frun-through-news-ecosystem%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=A%20run%20through%20the%20news%20ecosystem&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Frun-through-news-ecosystem%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Frun-through-news-ecosystem%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#6f501c1a0d050a0c1b523c070e1d0a0b4f091d00024f24010608071b4f29001a010b0e1b060001490d000b1652071b1b1f1c55404004010608071b09001a010b0e1b06000141001d08401c1f0a0a0c070a1c401d1a01421b071d001a080742010a181c420a0c001c161c1b0a0240" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/run-through-news-ecosystem/">
+				A run through the news ecosystem			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fmosaic-and-future-news%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=%E2%80%98Mosaic%E2%80%99%20and%20the%20future%20of%20news&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fmosaic-and-future-news%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fmosaic-and-future-news%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#ac93dfd9cec6c9cfd891ffc4cddec9c88ccadec3c18ce7c2c5cbc4d88ceac3d9c2c8cdd8c5c3c28acec3c8d591c4d8d8dcdf968383c7c2c5cbc4d8cac3d9c2c8cdd8c5c3c282c3decb83dfdcc9c9cfc4c9df83c1c3dfcdc5cf81cdc2c881cad9d8d9dec981c2c9dbdf83" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/mosaic-and-future-news/">
+				‘Mosaic’ and the future of news			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fteaching-hospital-goal-journalism-education%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=The%20%E2%80%98teaching%20hospital%E2%80%99%20%E2%80%94%20%20a%20goal%20for%20journalism%20education&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fteaching-hospital-goal-journalism-education%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fteaching-hospital-goal-journalism-education%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#c7f8b4b2a5ada2a4b3fa94afa6b5a2a3e7a1b5a8aae78ca9aea0afb3e781a8b2a9a3a6b3aea8a9e1a5a8a3befaafb3b3b7b4fde8e8aca9aea0afb3a1a8b2a9a3a6b3aea8a9e9a8b5a0e8b4b7a2a2a4afa2b4e8b3a2a6a4afaea9a0eaafa8b4b7aeb3a6abeaa0a8a6abeaada8b2b5a9a6abaeb4aaeaa2a3b2a4a6b3aea8a9e8" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/teaching-hospital-goal-journalism-education/">
+				The ‘teaching hospital’ —  a goal for journalism education			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card journalism">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fnoble-life-digital-age%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=A%20Noble%20Life%20in%20the%20Digital%20Age&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fnoble-life-digital-age%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fspeeches%2Fnoble-life-digital-age%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#3d024e485f57585e49006e555c4f58591d5b4f52501d7653545a55491d7b524853595c495452531b5f525944005549494d4e0712125653545a55495b524853595c4954525313524f5a124e4d58585e55584e1253525f51581051545b581059545a54495c51105c5a5812" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Journalism / Speech			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/speeches/noble-life-digital-age/">
+				A Noble Life in the Digital Age			</a>
+			</div>
+		</div>
+				</li>
+		</ul>
+</div>
+
+<div class="pagination__wrapper">
+	<div class="pagination"><span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="https://knightfoundation.org/speeches/page/2/">2</a>
+<a class="page-numbers" href="https://knightfoundation.org/speeches/page/3/">3</a>
+<a class="page-numbers" href="https://knightfoundation.org/speeches/page/4/">4</a>
+<a class="next page-numbers" href="https://knightfoundation.org/speeches/page/2/">Next <i></i></a></div>
+</div>
+</div>
+
+				</main>
+			</div>
+		</div><!-- #content -->
+
+		<footer class="site-footer">
+	<div class="site-footer__container">
+		<div class="site-footer__nav">
+			<div class="menu-footer-menu-container"><ul id="footer" class="menu"><li id="menu-item-152305" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152305"><a href="https://knightfoundation.org/about/contact/">Contact</a></li>
+<li id="menu-item-152306" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152306"><a href="https://knightfoundation.org/terms/">Terms</a></li>
+<li id="menu-item-152307" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152307"><a href="https://knightfoundation.org/privacy/">Privacy</a></li>
+<li id="menu-item-152308" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152308"><a href="https://knightfoundation.org/newsletter/">Subscribe</a></li>
+<li id="menu-item-181740" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181740"><a href="https://knightfoundation.org/faq-2/">FAQ</a></li>
+</ul></div>		</div>
+		<div class="site-footer__social">
+			<div class="menu-social-menu-container"><ul id="social" class="menu"><li id="menu-item-152314" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-152314"><a href="https://facebook.com/knightfdn">Facebook</a></li>
+<li id="menu-item-152313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-152313"><a href="https://twitter.com/knightfdn">Twitter</a></li>
+<li id="menu-item-152315" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-152315"><a href="https://instagram.com/knightfdn">Instagram</a></li>
+<li id="menu-item-181739" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181739"><a href="https://vimeo.com/knightfdn">Vimeo</a></li>
+</ul></div>		</div>
+		<div class="site-footer__colophon">
+			<p>
+				Copyright &copy; 2006-2019 John S. and James L. Knight Foundation. Other copyrights apply where noted.				<br>
+				This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.			</p>
+			<div class="site-footer__license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+					<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+				</a>
+				<a href="https://privacy.truste.com/privacy-seal/validation?rid=79133c65-c979-4b15-8a3a-33efc1bb705d" target="_blank">
+					<img src="https://privacy-policy.truste.com/privacy-seal/seal?rid=79133c65-c979-4b15-8a3a-33efc1bb705d" alt="TRUSTe">
+				</a>
+				<div class="vip">
+					<img src="/wp-content/themes/knight-foundation-app/client/src/images/logo-dark.png" alt="Powered by WordPress VIP"/>
+					<span>Powered by WordPress VIP</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer><!-- .site-footer -->
+	</div><!-- #page -->
+
+
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script id='knight-foundation-app-global-js-js-extra'>
+var knightConfig = {"restBase":"https:\/\/knightfoundation.org\/wp-json\/","timezone":"America\/New_York"};
+</script>
+<script src='https://knightfoundation.org/wp-content/themes/knight-foundation-app/client/build/js/global.e00b3b1977b3e603ab9d.bundle.min.js?ver=1.0.6' id='knight-foundation-app-global-js-js'></script>
+<script src='https://knightfoundation.org/wp-includes/js/wp-embed.min.js?ver=5.5' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-202033.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.8.1',blog:'156721592',post:'0',tz:'-4',srv:'knightfoundation.org'} ]);
+	_stq.push([ 'clickTrackerInit', '156721592', '0' ]);
+</script>
+
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b4222721b8","applicationID":"204779344","transactionName":"NlABZRRZDRYFARJaCQ8aIlISUQwLSxUUUhYRUBE=","queueTime":0,"applicationTime":200,"atts":"GhcWE1xDHklGA0QJHRxI","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+	</html>
+<!-- Feature content contains HTML for ENTIRE page. -->

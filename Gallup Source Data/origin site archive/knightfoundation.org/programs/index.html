@@ -1,0 +1,638 @@
+	<!doctype html>
+	<html lang="en-US">
+	<head>
+		<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b4222721b8",applicationID:"204779344"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="https://gmpg.org/xfn/11">
+		<!-- Open Graph tags and Twitter Card -->
+		<meta property="og:description" content="">
+		<meta property="og:image" content="">
+		<meta property="og:site_name" content="Knight Foundation">
+		<meta property="og:title" content="Programs">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://knightfoundation.org/programs/">
+		<meta name="twitter:site" content="@knightfdn">
+		<meta name="twitter:card" content="summary_large_image">
+					<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-282115-15"></script> 			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'UA-282115-15');
+			</script>
+			<!-- End Global site tag (gtag.js) - Google Analytics -->
+			<!-- Google Tag Manager -->
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-5JM9GMN');</script>
+			<!-- End Google Tag Manager -->
+			
+		<title>Programs &#8211; Knight Foundation</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Knight Foundation &raquo; Feed" href="https://knightfoundation.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Knight Foundation &raquo; Comments Feed" href="https://knightfoundation.org/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/knightfoundation.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://knightfoundation.org/wp-includes/css/dist/block-library/style.min.css?ver=5.5' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='knight-foundation-app-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500%2C700%7CRoboto+Condensed%3A300%2C400%2C700&#038;ver=1.0.0' media='all' />
+<link rel='stylesheet' id='knight-foundation-app-global-css-css'  href='https://knightfoundation.org/wp-content/themes/knight-foundation-app/client/build/css/global.51bb2c4d99cb52020a85.min.css?ver=1.0.6' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://knightfoundation.org/wp-content/mu-plugins/jetpack/css/jetpack.css?ver=8.8.1' media='all' />
+<link rel="https://api.w.org/" href="https://knightfoundation.org/wp-json/" /><link rel="alternate" type="application/json" href="https://knightfoundation.org/wp-json/wp/v2/pages/152271" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://knightfoundation.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://knightfoundation.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.5" />
+<link rel="canonical" href="https://knightfoundation.org/programs/" />
+<link rel='shortlink' href='https://knightfoundation.org/?p=152271' />
+<link rel="alternate" type="application/json+oembed" href="https://knightfoundation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fknightfoundation.org%2Fprograms%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://knightfoundation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fknightfoundation.org%2Fprograms%2F&#038;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style><link rel="icon" href="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=32" sizes="32x32" />
+<link rel="icon" href="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=192" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=180" />
+<meta name="msapplication-TileImage" content="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=270" />
+	</head>
+
+	<body class="page-template page-template-page-programs page-template-page-programs-php page page-id-152271 wp-custom-logo">
+			<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JM9GMN"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		<header id="header" class="site-header" data-component="siteHeader">
+	<div class="site-header__container">
+		<div class="site-header__branding">
+			<h1 class="site-header__title">
+				<a class="logo" href="https://knightfoundation.org/" rel="home">
+	<span class="logo__logomark">
+		<svg width="57" height="57" viewBox="0 0 161 161" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g style="mix-blend-mode:normal"><use xlink:href="#path0_fill" transform="translate(.67)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path1_fill" transform="translate(39.58 34.33)" fill="#FFF" style="mix-blend-mode:normal"/></g><defs><path id="path0_fill" d="M160.21 0H0v160.21h160.21V0z"/><path id="path1_fill" d="M50.35 18.31v18.31h38.91v18.31H50.35v36.62L20.74 45.78 50.35 0h43.49v18.31H50.35zM0 56.2v35.35h22.87L0 56.2zM22.87 0H0v35.35L22.87 0z"/></defs></svg>
+	</span>
+	<span class="logo__logo">
+		<svg width="200" height="57" viewBox="0 0 567 161" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g style="mix-blend-mode:normal"><use xlink:href="#path0_fill" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path1_fill" transform="translate(38.91 34.33)" fill="#FFF" style="mix-blend-mode:normal"/><use xlink:href="#path2_fill" transform="translate(202.11 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path3_fill" transform="translate(242.35 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path4_fill" transform="translate(283.7 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path5_fill" transform="translate(307.08 27.75)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path6_fill" transform="translate(349.55 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path7_fill" transform="translate(388.24 28.51)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path8_fill" transform="translate(202.1 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path9_fill" transform="translate(231.91 94.6)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path10_fill" transform="translate(273.84 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path11_fill" transform="translate(315.69 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path12_fill" transform="translate(358.12 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path13_fill" transform="translate(392.25 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path14_fill" transform="translate(430.82 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path15_fill" transform="translate(468.41 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path16_fill" transform="translate(491.92 94.6)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path17_fill" transform="translate(533.81 95.32)" fill="#010101" style="mix-blend-mode:normal"/></g><defs><path id="path0_fill" d="M160.21 0H0v160.21h160.21V0z"/><path id="path1_fill" d="M50.35 18.31v18.31h38.91v18.31H50.35v36.62L20.74 45.78 50.35 0h43.49v18.31H50.35zM0 56.2v35.35h22.87L0 56.2zM22.87 0H0v35.35L22.87 0z"/><path id="path2_fill" d="M8.99 17.04l14-17h10L18.84 16.8l15.37 24.12H23.75L12.84 24 9 28.57v12.31H0V0h9l-.01 17.04z"/><path id="path3_fill" d="M22.5 40.88L8.36 13.53v27.35H0V0h10.58L24.2 27.74V0h8.35v40.88H22.5z"/><path id="path4_fill" d="M13.09 35.09h4.12v5.79H0v-5.79h4.12V5.79H0V0h17.21v5.79h-4.12v29.3z"/><path id="path5_fill" d="M18.21 20.84h14.87v21.44H27.4l-.89-4.79a12.738 12.738 0 0 1-10.25 4.79C6.01 42.28 0 35.28 0 22.06 0 6.46 7.58 0 18 0c9 0 14.15 5.29 14.2 14.93l-8.86.67c-.11-6.74-2.73-8.46-6-8.46-4.34 0-7.85 3.4-7.85 14.54 0 10 3.29 13.54 8.19 13.54 3.79 0 7.24-2.4 7.46-7.85h-7l.07-6.53z"/><path id="path6_fill" d="M32 40.88h-9.08V24.33H9v16.6H0V0h9v16.88h13.92V0H32v40.88z"/><path id="path7_fill" d="M10.8 7.3H0V0h30.69v7.3H19.88v33.59H10.8V7.3z"/><path id="path8_fill" d="M22.15 24.62H9v16.26H0V0h24.12v7.3H9v10.25h13.15v7.07z"/><path id="path9_fill" d="M0 21.33C0 7.74 7 0 18.1 0c11.36 0 16.87 7.57 16.87 20.66 0 13.76-6 21.61-17.71 21.61S0 34.64 0 21.33zm25.51-.5c0-9.47-2.45-13.59-7.68-13.59-5.07 0-8.35 4.07-8.35 13.81s2.49 14.16 8.06 14.16c5.41 0 7.97-4.25 7.97-14.38z"/><path id="path10_fill" d="M23.23 0h8.91v26.23c0 9.75-5.24 15.32-16.32 15.32C4.07 41.55 0 35.65 0 25.9V0h8.86v23.49c0 7.13 1.39 10.86 7.24 10.86 5.85 0 7.13-3.45 7.13-10.81V0z"/><path id="path11_fill" d="M22.49 40.88L8.35 13.49v27.35H0V0h10.58l13.59 27.74V0h8.35v40.88H22.49z"/><path id="path12_fill" d="M0 40.88V0h10c15.48 0 21.45 6.8 21.45 19.61 0 14.2-6 21.28-21.55 21.28L0 40.88zm11.2-7.39c7.18 0 11-3.34 11-13.37 0-9.64-3.45-12.87-11-12.87H9.03v26.24h2.17z"/><path id="path13_fill" d="M24.75 0l13.76 40.88H29.3l-3.16-9.39H12L9 40.9H0L13.48.02 24.75 0zm-5.74 8.3h-.11l-5 16.26h10.3L19.01 8.3z"/><path id="path14_fill" d="M10.8 7.3H0V0h30.73v7.3H19.88v33.59H10.8V7.3z"/><path id="path15_fill" d="M13.14 35.09h4.12v5.79H0v-5.79h4.14V5.79H.02V0h17.21v5.79h-4.09v29.3z"/><path id="path16_fill" d="M0 21.33C0 7.74 7 0 18.1 0c11.36 0 16.87 7.57 16.87 20.66 0 13.76-6 21.61-17.71 21.61S0 34.64 0 21.33zm25.51-.5c0-9.47-2.45-13.59-7.68-13.59-5.07 0-8.35 4.07-8.35 13.81s2.49 14.16 8.06 14.16c5.41 0 7.97-4.25 7.97-14.38z"/><path id="path17_fill" d="M22.5 40.88L8.35 13.49v27.35H0V0h10.58l13.59 27.74V0h8.35v40.88H22.5z"/></defs></svg>
+	</span>
+	<span class="screen-reader-text">
+		Knight Foundation	</span>
+</a>
+			</h1>
+		</div><!-- .site-branding -->
+		<div class="menu-primary-navigation-container"><ul id="primary" class="site-header__nav"><li id="menu-item-152279" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-152271 current_page_item menu-item-152279"><a href="https://knightfoundation.org/programs/" aria-current="page">Programs</a></li>
+<li id="menu-item-62873" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62873"><a href="https://knightfoundation.org/topics/">Topics</a></li>
+<li id="menu-item-152325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152325"><a href="https://knightfoundation.org/research/">Research</a></li>
+<li id="menu-item-152281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152281"><a href="https://knightfoundation.org/about/">About</a></li>
+</ul></div>		<div class="site-header__search" data-component="Search">
+			<button class="search-form__trigger" aria-controls="site-header-search">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><style>.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><path class="st0" d="M15.7 14.3l-3.1-3.1C13.5 10 14 8.6 14 7c0-3.9-3.1-7-7-7S0 3.1 0 7s3.1 7 7 7c1.6 0 3-.5 4.2-1.4l3.1 3.1c.2.2.5.3.7.3.3 0 .5-.1.7-.3.4-.4.4-1 0-1.4zM7 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" id="Zoom_2_x2C__Magnifying_Glass_2_1_"/></svg>
+			</button>
+			<div id="site-header-search" class="search-form__container" tabindex="-1" aria-hidden="true">
+				<div class="search-form__inner">
+					<form
+	class="search-form search-form--context-header"
+	role="search"
+	method="get"
+	action="https://knightfoundation.org/"
+>
+	<label class="search-form__label" for="search-form">
+		<span>
+			Search:		</span>
+	</label>
+	<div class="search-form__form">
+		<input
+			type="search"
+			id="search-form"
+			class="search-form__field"
+			placeholder="Search"
+			value=""
+			name="s"
+		/>
+		<button class="search-form__button--submit search-form__button">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><style>.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><path class="st0" d="M15.7 14.3l-3.1-3.1C13.5 10 14 8.6 14 7c0-3.9-3.1-7-7-7S0 3.1 0 7s3.1 7 7 7c1.6 0 3-.5 4.2-1.4l3.1 3.1c.2.2.5.3.7.3.3 0 .5-.1.7-.3.4-.4.4-1 0-1.4zM7 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" id="Zoom_2_x2C__Magnifying_Glass_2_1_"/></svg>
+		</button>
+	</div>
+</form>
+				</div>
+			</div>
+			<button class="search-form__close" aria-controls="site-header-search">
+				<svg xmlns="http://www.w3.org/2000/svg" width="10.5" height="10.5" viewBox="0 0 10.5 10.5"><path d="M6.7 5.2l3.5-3.5c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0L5.2 3.8 1.7.3C1.3-.1.7-.1.3.3s-.4 1 0 1.4l3.5 3.5L.3 8.8c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l3.5-3.5 3.5 3.5c.4.4 1 .4 1.4 0 .4-.4.4-1 0-1.4L6.7 5.2z"/></svg>
+			</button>
+		</div><!-- .site-search -->
+	</div>
+	<div class="site-subnav__container" data-component="Subheader">
+	<div class="menu-programs-secondary-container"><ul id="programs" class="site-header__subnav"><li id="menu-item-152312" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-152271 current_page_item menu-item-152312"><a href="https://knightfoundation.org/programs/" aria-current="page">Programs</a></li>
+<li id="menu-item-152310" class="menu-item menu-item-type-post_type menu-item-object-program-area menu-item-152310"><a href="https://knightfoundation.org/programs/journalism/">Journalism</a></li>
+<li id="menu-item-180645" class="menu-item menu-item-type-post_type menu-item-object-program-area menu-item-180645"><a href="https://knightfoundation.org/programs/communities/">Communities</a></li>
+<li id="menu-item-152309" class="menu-item menu-item-type-post_type menu-item-object-program-area menu-item-152309"><a href="https://knightfoundation.org/programs/arts/">Arts</a></li>
+<li id="menu-item-152335" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152335"><a href="https://knightfoundation.org/apply/">Apply</a></li>
+<li id="menu-item-152336" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152336"><a href="https://knightfoundation.org/grants/">Browse Grants</a></li>
+</ul></div>		</div>
+		
+	</div>
+</header>
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main">
+
+					
+<header
+		class="entry-header sm-pad"
+	>
+	<div class="entry-title-wrap">
+		<h1 class="entry-title">
+			<span>Program Areas</span>
+		</h1>
+	</div>
+</header><!-- .entry-header -->
+
+<div class="programs__wrapper">
+
+	<!-- Program areas -->
+	<div class="programs__wrapper-section intro">
+	<p class="programs__wrapper-section-intro">We support informed and engaged communities through three program areas.</p>
+	<div class="programs__wrapper-list"><div class="programs__wrapper-program"><a href="https://knightfoundation.org/programs/journalism/"><div class="programs__wrapper-program-top journalism"><h5>Journalism</h5></div></a><div class="programs__wrapper-program-bottom"><p>Building a sustainable future for local news</p><a class="button" href="https://knightfoundation.org/programs/journalism/">Learn more <img src="/wp-content/themes/knight-foundation-app/client/src/images/baseline-arrow_forward_ios-24px.svg" /></a></div></div><div class="programs__wrapper-program"><a href="https://knightfoundation.org/programs/communities/"><div class="programs__wrapper-program-top communities"><h5>Communities</h5></div></a><div class="programs__wrapper-program-bottom"><p>Supporting equitable, inclusive engagement
+</p><a class="button" href="https://knightfoundation.org/programs/communities/">Learn more <img src="/wp-content/themes/knight-foundation-app/client/src/images/baseline-arrow_forward_ios-24px.svg" /></a></div></div><div class="programs__wrapper-program"><a href="https://knightfoundation.org/programs/arts/"><div class="programs__wrapper-program-top arts"><h5>Arts</h5></div></a><div class="programs__wrapper-program-bottom"><p>Connecting people to place and each other</p><a class="button" href="https://knightfoundation.org/programs/arts/">Learn more <img src="/wp-content/themes/knight-foundation-app/client/src/images/baseline-arrow_forward_ios-24px.svg" /></a></div></div></div>	</div>
+
+	<!-- Funding opportunities -->
+	<div class="programs__wrapper-section">
+	<div class="program-wrap-text">
+	<div class="program-wrap-top">
+	<h2>All funding opportunities</h2>
+	<p>We fund the majority of projects through open challenges. Don&#039;t see a match to your idea?</p>
+	<a href="/apply">
+		<button>
+		Submit a letter of inquiry					<img src="/wp-content/themes/knight-foundation-app/client/src/images/arrow-forward-white.svg" />
+				</button>
+	</a>
+	</div>
+	<div class="programs__wrapper-list">
+	<div class="programs__wrapper-program">
+	<a href="https://knightfoundation.org/challenges/knight-new-work-2020/">
+		<div class="programs__wrapper-program-top
+		arts		">
+		<div class="card__content-type">
+		Arts		</div>
+		<h5>Knight New Work 2020</h5>
+		</div>
+	</a>
+	<div class="programs__wrapper-program-bottom">
+		<p>Learn more about the goal of Knight New Work 2020 in&nbsp;Adam Ganuza&#8217;s blog post. Knight New Work 2020: Miami applications are open As the global pandemic disrupts the means of experiencing the arts in person, artists are responding by creating innovative artworks and ways to experience them. To recognize, support and accelerate this creative virtuosity, [&hellip;]</p>
+		<a class="button" href="https://knightfoundation.org/challenges/knight-new-work-2020/">
+			Learn more			<img src="/wp-content/themes/knight-foundation-app/client/src/images/baseline-arrow_forward_ios-24px.svg" />
+		</a>
+	</div>
+	</div>
+	</div>
+</div>
+	</div>
+
+	<!-- Funded ideas -->
+	<div class="programs__wrapper-section">
+	<div class="program-wrap-text">
+	<div class="program-wrap-top">
+	<h2>Featured funded ideas</h2>
+	<p>Explore our work across program areas and communities.</p>
+	<a href="/grants">
+		<button>
+		Browse all grants					<img src="/wp-content/themes/knight-foundation-app/client/src/images/arrow-forward-white.svg" />
+				</button>
+	</a>
+	</div>
+	<div class="block--type--curated-content">
+		<ul class="block__cards
+					noscroll
+		"
+	>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fventure-cafe-miami-2%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Venture%20Cafe%20Miami&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fventure-cafe-miami-2%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fventure-cafe-miami-2%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#9ca3efe9fef6f9ffe8a1cff4fdeef9f8bcfaeef3f1bcd7f2f5fbf4e8bcdaf3e9f2f8fde8f5f3f2bafef3f8e5a1f4e8e8ecefa6b3b3f7f2f5fbf4e8faf3e9f2f8fde8f5f3f2b2f3eefbb3fbeefdf2e8efb3eaf9f2e8e9eef9b1fffdfaf9b1f1f5fdf1f5b1aeb3" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Grant			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/grants/venture-cafe-miami-2/">
+				Venture Cafe Miami			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fmiami-herbert-business-school%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Miami%20Herbert%20Business%20School&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fmiami-herbert-business-school%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fmiami-herbert-business-school%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#300f4345525a5553440d6358514255541056425f5d107b5e5957584410765f455e545144595f5e16525f54490d58444440430a1f1f5b5e59575844565f455e545144595f5e1e5f42571f5742515e44431f5d59515d591d585542525542441d524543595e5543431d4353585f5f5c1f" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Grant			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/grants/miami-herbert-business-school/">
+				Miami Herbert Business School			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fthe-idea-center-at-miami-dade-college%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=The%20Idea%20Center%20at%20Miami%20Dade%20College&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fthe-idea-center-at-miami-dade-college%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fthe-idea-center-at-miami-dade-college%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#b788c4c2d5ddd2d4c38ae4dfd6c5d2d397d1c5d8da97fcd9ded0dfc397f1d8c2d9d3d6c3ded8d991d5d8d3ce8adfc3c3c7c48d9898dcd9ded0dfc3d1d8c2d9d3d6c3ded8d999d8c5d098d0c5d6d9c3c498c3dfd29aded3d2d69ad4d2d9c3d2c59ad6c39adaded6dade9ad3d6d3d29ad4d8dbdbd2d0d298" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Grant			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/grants/the-idea-center-at-miami-dade-college/">
+				The Idea Center at Miami Dade College			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fcraftspeople%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Craftspeople&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fcraftspeople%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fcraftspeople%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#87b8f4f2e5ede2e4f3bad4efe6f5e2e3a7e1f5e8eaa7cce9eee0eff3a7c1e8f2e9e3e6f3eee8e9a1e5e8e3febaeff3f3f7f4bda8a8ece9eee0eff3e1e8f2e9e3e6f3eee8e9a9e8f5e0a8e0f5e6e9f3f4a8e4f5e6e1f3f4f7e2e8f7ebe2a8" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Grant			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/grants/craftspeople/">
+				Craftspeople			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fout-in-tech%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Out%20In%20Tech&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fout-in-tech%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fout-in-tech%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#112e6264737b7472652c4279706374753177637e7c315a7f7876796531577e647f757065787e7f37737e75682c79656561622b3e3e7a7f78767965777e647f757065787e7f3f7e63763e7663707f65623e7e64653c787f3c657472793e" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Grant			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/grants/out-in-tech/">
+				Out In Tech			</a>
+			</div>
+		</div>
+				</li>
+					<li class="block__card card communities">
+		<div data-component="curatedShare">
+	<button
+		class="card__share-button share-button"
+		type="button"
+	>
+		<span>Share</span>
+	</button>
+	<div class="card__share-icons">
+		<div class="social-share">
+	<span class="social-share__label contrast">
+		Share:	</span>
+	<ul class="social-share__list">
+		<li class="social-share__item share-facebook contrast">
+			<a
+				href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fblack-men-talk-tech%2F"
+				target="_blank"
+			>
+				<span>
+				Facebook				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-twitter contrast">
+			<a
+				href="https://twitter.com/intent/tweet?text=Black%20Men%20Talk%20Tech&#038;via=knightfdn&#038;url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fblack-men-talk-tech%2F"
+				target="_blank"
+			>
+				<span>
+				Twitter				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-linkedin contrast">
+			<a
+				href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fknightfoundation.org%2Fgrants%2Fblack-men-talk-tech%2F"
+				target="_blank"
+			>
+				<span>
+				LinkedIn				</span>
+			</a>
+		</li>
+		<li class="social-share__item share-email contrast">
+			<a href="/cdn-cgi/l/email-protection#ebd4989e89818e889fd6b8838a998e8fcb8d998486cba085828c839fcbad849e858f8a9f828485cd89848f92d6839f9f9b98d1c4c48085828c839f8d849e858f8a9f828485c584998cc48c998a859f98c489878a8880c6868e85c69f8a8780c69f8e8883c4" target="_blank">
+				<span>
+				Email				</span>
+			</a>
+		</li>
+	</ul>
+</div>
+	</div>
+</div>
+		<div class="card__header">
+			<div class="card__content-type">
+			Communities / Grant			</div>
+			<div class="card__title">
+			<a href="https://knightfoundation.org/grants/black-men-talk-tech/">
+				Black Men Talk Tech			</a>
+			</div>
+		</div>
+				</li>
+		</ul>
+</div>
+</div>
+	</div>
+</div>
+
+				</main>
+			</div>
+		</div><!-- #content -->
+
+		<footer class="site-footer">
+	<div class="site-footer__container">
+		<div class="site-footer__nav">
+			<div class="menu-footer-menu-container"><ul id="footer" class="menu"><li id="menu-item-152305" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152305"><a href="https://knightfoundation.org/about/contact/">Contact</a></li>
+<li id="menu-item-152306" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152306"><a href="https://knightfoundation.org/terms/">Terms</a></li>
+<li id="menu-item-152307" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152307"><a href="https://knightfoundation.org/privacy/">Privacy</a></li>
+<li id="menu-item-152308" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152308"><a href="https://knightfoundation.org/newsletter/">Subscribe</a></li>
+<li id="menu-item-181740" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181740"><a href="https://knightfoundation.org/faq-2/">FAQ</a></li>
+</ul></div>		</div>
+		<div class="site-footer__social">
+			<div class="menu-social-menu-container"><ul id="social" class="menu"><li id="menu-item-152314" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-152314"><a href="https://facebook.com/knightfdn">Facebook</a></li>
+<li id="menu-item-152313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-152313"><a href="https://twitter.com/knightfdn">Twitter</a></li>
+<li id="menu-item-152315" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-152315"><a href="https://instagram.com/knightfdn">Instagram</a></li>
+<li id="menu-item-181739" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181739"><a href="https://vimeo.com/knightfdn">Vimeo</a></li>
+</ul></div>		</div>
+		<div class="site-footer__colophon">
+			<p>
+				Copyright &copy; 2006-2019 John S. and James L. Knight Foundation. Other copyrights apply where noted.				<br>
+				This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.			</p>
+			<div class="site-footer__license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+					<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+				</a>
+				<a href="https://privacy.truste.com/privacy-seal/validation?rid=79133c65-c979-4b15-8a3a-33efc1bb705d" target="_blank">
+					<img src="https://privacy-policy.truste.com/privacy-seal/seal?rid=79133c65-c979-4b15-8a3a-33efc1bb705d" alt="TRUSTe">
+				</a>
+				<div class="vip">
+					<img src="/wp-content/themes/knight-foundation-app/client/src/images/logo-dark.png" alt="Powered by WordPress VIP"/>
+					<span>Powered by WordPress VIP</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer><!-- .site-footer -->
+	</div><!-- #page -->
+
+
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script id='knight-foundation-app-global-js-js-extra'>
+var knightConfig = {"restBase":"https:\/\/knightfoundation.org\/wp-json\/","timezone":"America\/New_York"};
+</script>
+<script src='https://knightfoundation.org/wp-content/themes/knight-foundation-app/client/build/js/global.e00b3b1977b3e603ab9d.bundle.min.js?ver=1.0.6' id='knight-foundation-app-global-js-js'></script>
+<script src='https://knightfoundation.org/wp-includes/js/wp-embed.min.js?ver=5.5' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-202033.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.8.1',blog:'156721592',post:'152271',tz:'-4',srv:'knightfoundation.org'} ]);
+	_stq.push([ 'clickTrackerInit', '156721592', '152271' ]);
+</script>
+
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b4222721b8","applicationID":"204779344","transactionName":"NlABZRRZDRYFARJaCQ8aIlISUQwLSxUUUhYRUBE=","queueTime":0,"applicationTime":121,"atts":"GhcWE1xDHklGA0QJHRxI","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+	</html>
+<!-- Feature content contains HTML for ENTIRE page. -->

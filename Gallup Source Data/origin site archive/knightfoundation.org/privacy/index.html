@@ -1,0 +1,477 @@
+	<!doctype html>
+	<html lang="en-US">
+	<head>
+		<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b4222721b8",applicationID:"204779344"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="https://gmpg.org/xfn/11">
+		<!-- Open Graph tags and Twitter Card -->
+		<meta property="og:description" content="PRIVACY POLICY This privacy policy applies to knightfoundation.org, owned and operated by John S. and James L. Knight Foundation (&quot;Knight&hellip;">
+		<meta property="og:image" content="">
+		<meta property="og:site_name" content="Knight Foundation">
+		<meta property="og:title" content="Privacy Policy">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://knightfoundation.org/privacy/">
+		<meta name="twitter:site" content="@knightfdn">
+		<meta name="twitter:card" content="summary_large_image">
+					<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-282115-15"></script> 			<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'UA-282115-15');
+			</script>
+			<!-- End Global site tag (gtag.js) - Google Analytics -->
+			<!-- Google Tag Manager -->
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-5JM9GMN');</script>
+			<!-- End Google Tag Manager -->
+			
+		<title>Privacy Policy &#8211; Knight Foundation</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Knight Foundation &raquo; Feed" href="https://knightfoundation.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Knight Foundation &raquo; Comments Feed" href="https://knightfoundation.org/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/knightfoundation.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://knightfoundation.org/wp-includes/css/dist/block-library/style.min.css?ver=5.5' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='knight-foundation-app-google-fonts-css'  href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500%2C700%7CRoboto+Condensed%3A300%2C400%2C700&#038;ver=1.0.0' media='all' />
+<link rel='stylesheet' id='knight-foundation-app-global-css-css'  href='https://knightfoundation.org/wp-content/themes/knight-foundation-app/client/build/css/global.51bb2c4d99cb52020a85.min.css?ver=1.0.6' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://knightfoundation.org/wp-content/mu-plugins/jetpack/css/jetpack.css?ver=8.8.1' media='all' />
+<link rel="https://api.w.org/" href="https://knightfoundation.org/wp-json/" /><link rel="alternate" type="application/json" href="https://knightfoundation.org/wp-json/wp/v2/pages/11715" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://knightfoundation.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://knightfoundation.org/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.5" />
+<link rel="canonical" href="https://knightfoundation.org/privacy/" />
+<link rel='shortlink' href='https://knightfoundation.org/?p=11715' />
+<link rel="alternate" type="application/json+oembed" href="https://knightfoundation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fknightfoundation.org%2Fprivacy%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://knightfoundation.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fknightfoundation.org%2Fprivacy%2F&#038;format=xml" />
+<style type='text/css'>img#wpstats{display:none}</style><link rel="icon" href="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=32" sizes="32x32" />
+<link rel="icon" href="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=192" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=180" />
+<meta name="msapplication-TileImage" content="https://knightfoundation.org/wp-content/uploads/2019/11/cropped-KF_Logotype_Icon-and-Stacked-Name-site-icon.png?w=270" />
+	</head>
+
+	<body class="page-template-default page page-id-11715 wp-custom-logo">
+			<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JM9GMN"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		<header id="header" class="site-header" data-component="siteHeader">
+	<div class="site-header__container">
+		<div class="site-header__branding">
+			<h1 class="site-header__title">
+				<a class="logo" href="https://knightfoundation.org/" rel="home">
+	<span class="logo__logomark">
+		<svg width="57" height="57" viewBox="0 0 161 161" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g style="mix-blend-mode:normal"><use xlink:href="#path0_fill" transform="translate(.67)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path1_fill" transform="translate(39.58 34.33)" fill="#FFF" style="mix-blend-mode:normal"/></g><defs><path id="path0_fill" d="M160.21 0H0v160.21h160.21V0z"/><path id="path1_fill" d="M50.35 18.31v18.31h38.91v18.31H50.35v36.62L20.74 45.78 50.35 0h43.49v18.31H50.35zM0 56.2v35.35h22.87L0 56.2zM22.87 0H0v35.35L22.87 0z"/></defs></svg>
+	</span>
+	<span class="logo__logo">
+		<svg width="200" height="57" viewBox="0 0 567 161" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g style="mix-blend-mode:normal"><use xlink:href="#path0_fill" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path1_fill" transform="translate(38.91 34.33)" fill="#FFF" style="mix-blend-mode:normal"/><use xlink:href="#path2_fill" transform="translate(202.11 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path3_fill" transform="translate(242.35 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path4_fill" transform="translate(283.7 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path5_fill" transform="translate(307.08 27.75)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path6_fill" transform="translate(349.55 28.48)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path7_fill" transform="translate(388.24 28.51)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path8_fill" transform="translate(202.1 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path9_fill" transform="translate(231.91 94.6)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path10_fill" transform="translate(273.84 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path11_fill" transform="translate(315.69 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path12_fill" transform="translate(358.12 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path13_fill" transform="translate(392.25 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path14_fill" transform="translate(430.82 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path15_fill" transform="translate(468.41 95.32)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path16_fill" transform="translate(491.92 94.6)" fill="#010101" style="mix-blend-mode:normal"/><use xlink:href="#path17_fill" transform="translate(533.81 95.32)" fill="#010101" style="mix-blend-mode:normal"/></g><defs><path id="path0_fill" d="M160.21 0H0v160.21h160.21V0z"/><path id="path1_fill" d="M50.35 18.31v18.31h38.91v18.31H50.35v36.62L20.74 45.78 50.35 0h43.49v18.31H50.35zM0 56.2v35.35h22.87L0 56.2zM22.87 0H0v35.35L22.87 0z"/><path id="path2_fill" d="M8.99 17.04l14-17h10L18.84 16.8l15.37 24.12H23.75L12.84 24 9 28.57v12.31H0V0h9l-.01 17.04z"/><path id="path3_fill" d="M22.5 40.88L8.36 13.53v27.35H0V0h10.58L24.2 27.74V0h8.35v40.88H22.5z"/><path id="path4_fill" d="M13.09 35.09h4.12v5.79H0v-5.79h4.12V5.79H0V0h17.21v5.79h-4.12v29.3z"/><path id="path5_fill" d="M18.21 20.84h14.87v21.44H27.4l-.89-4.79a12.738 12.738 0 0 1-10.25 4.79C6.01 42.28 0 35.28 0 22.06 0 6.46 7.58 0 18 0c9 0 14.15 5.29 14.2 14.93l-8.86.67c-.11-6.74-2.73-8.46-6-8.46-4.34 0-7.85 3.4-7.85 14.54 0 10 3.29 13.54 8.19 13.54 3.79 0 7.24-2.4 7.46-7.85h-7l.07-6.53z"/><path id="path6_fill" d="M32 40.88h-9.08V24.33H9v16.6H0V0h9v16.88h13.92V0H32v40.88z"/><path id="path7_fill" d="M10.8 7.3H0V0h30.69v7.3H19.88v33.59H10.8V7.3z"/><path id="path8_fill" d="M22.15 24.62H9v16.26H0V0h24.12v7.3H9v10.25h13.15v7.07z"/><path id="path9_fill" d="M0 21.33C0 7.74 7 0 18.1 0c11.36 0 16.87 7.57 16.87 20.66 0 13.76-6 21.61-17.71 21.61S0 34.64 0 21.33zm25.51-.5c0-9.47-2.45-13.59-7.68-13.59-5.07 0-8.35 4.07-8.35 13.81s2.49 14.16 8.06 14.16c5.41 0 7.97-4.25 7.97-14.38z"/><path id="path10_fill" d="M23.23 0h8.91v26.23c0 9.75-5.24 15.32-16.32 15.32C4.07 41.55 0 35.65 0 25.9V0h8.86v23.49c0 7.13 1.39 10.86 7.24 10.86 5.85 0 7.13-3.45 7.13-10.81V0z"/><path id="path11_fill" d="M22.49 40.88L8.35 13.49v27.35H0V0h10.58l13.59 27.74V0h8.35v40.88H22.49z"/><path id="path12_fill" d="M0 40.88V0h10c15.48 0 21.45 6.8 21.45 19.61 0 14.2-6 21.28-21.55 21.28L0 40.88zm11.2-7.39c7.18 0 11-3.34 11-13.37 0-9.64-3.45-12.87-11-12.87H9.03v26.24h2.17z"/><path id="path13_fill" d="M24.75 0l13.76 40.88H29.3l-3.16-9.39H12L9 40.9H0L13.48.02 24.75 0zm-5.74 8.3h-.11l-5 16.26h10.3L19.01 8.3z"/><path id="path14_fill" d="M10.8 7.3H0V0h30.73v7.3H19.88v33.59H10.8V7.3z"/><path id="path15_fill" d="M13.14 35.09h4.12v5.79H0v-5.79h4.14V5.79H.02V0h17.21v5.79h-4.09v29.3z"/><path id="path16_fill" d="M0 21.33C0 7.74 7 0 18.1 0c11.36 0 16.87 7.57 16.87 20.66 0 13.76-6 21.61-17.71 21.61S0 34.64 0 21.33zm25.51-.5c0-9.47-2.45-13.59-7.68-13.59-5.07 0-8.35 4.07-8.35 13.81s2.49 14.16 8.06 14.16c5.41 0 7.97-4.25 7.97-14.38z"/><path id="path17_fill" d="M22.5 40.88L8.35 13.49v27.35H0V0h10.58l13.59 27.74V0h8.35v40.88H22.5z"/></defs></svg>
+	</span>
+	<span class="screen-reader-text">
+		Knight Foundation	</span>
+</a>
+			</h1>
+		</div><!-- .site-branding -->
+		<div class="menu-primary-navigation-container"><ul id="primary" class="site-header__nav"><li id="menu-item-152279" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152279"><a href="https://knightfoundation.org/programs/">Programs</a></li>
+<li id="menu-item-62873" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62873"><a href="https://knightfoundation.org/topics/">Topics</a></li>
+<li id="menu-item-152325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152325"><a href="https://knightfoundation.org/research/">Research</a></li>
+<li id="menu-item-152281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152281"><a href="https://knightfoundation.org/about/">About</a></li>
+</ul></div>		<div class="site-header__search" data-component="Search">
+			<button class="search-form__trigger" aria-controls="site-header-search">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><style>.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><path class="st0" d="M15.7 14.3l-3.1-3.1C13.5 10 14 8.6 14 7c0-3.9-3.1-7-7-7S0 3.1 0 7s3.1 7 7 7c1.6 0 3-.5 4.2-1.4l3.1 3.1c.2.2.5.3.7.3.3 0 .5-.1.7-.3.4-.4.4-1 0-1.4zM7 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" id="Zoom_2_x2C__Magnifying_Glass_2_1_"/></svg>
+			</button>
+			<div id="site-header-search" class="search-form__container" tabindex="-1" aria-hidden="true">
+				<div class="search-form__inner">
+					<form
+	class="search-form search-form--context-header"
+	role="search"
+	method="get"
+	action="https://knightfoundation.org/"
+>
+	<label class="search-form__label" for="search-form">
+		<span>
+			Search:		</span>
+	</label>
+	<div class="search-form__form">
+		<input
+			type="search"
+			id="search-form"
+			class="search-form__field"
+			placeholder="Search"
+			value=""
+			name="s"
+		/>
+		<button class="search-form__button--submit search-form__button">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><style>.st0{fill-rule:evenodd;clip-rule:evenodd;}</style><path class="st0" d="M15.7 14.3l-3.1-3.1C13.5 10 14 8.6 14 7c0-3.9-3.1-7-7-7S0 3.1 0 7s3.1 7 7 7c1.6 0 3-.5 4.2-1.4l3.1 3.1c.2.2.5.3.7.3.3 0 .5-.1.7-.3.4-.4.4-1 0-1.4zM7 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" id="Zoom_2_x2C__Magnifying_Glass_2_1_"/></svg>
+		</button>
+	</div>
+</form>
+				</div>
+			</div>
+			<button class="search-form__close" aria-controls="site-header-search">
+				<svg xmlns="http://www.w3.org/2000/svg" width="10.5" height="10.5" viewBox="0 0 10.5 10.5"><path d="M6.7 5.2l3.5-3.5c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0L5.2 3.8 1.7.3C1.3-.1.7-.1.3.3s-.4 1 0 1.4l3.5 3.5L.3 8.8c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l3.5-3.5 3.5 3.5c.4.4 1 .4 1.4 0 .4-.4.4-1 0-1.4L6.7 5.2z"/></svg>
+			</button>
+		</div><!-- .site-search -->
+	</div>
+	<div class="site-subnav__container" data-component="Subheader">
+			</div>
+		
+	</div>
+</header>
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main">
+
+					<article id="post-11715" class="post-11715 page type-page status-publish hentry">
+	<header
+					class="entry-header"
+			>
+		<div class="entry-title-wrap">
+			<h1 class="entry-title"><span>Privacy Policy</span></h1>		</div>
+	</header><!-- .entry-header -->
+	<div class="entry__content-wrapper">
+				<div class="entry__content"><div class="rich-text">
+<p><strong>PRIVACY POLICY</strong></p>
+</div>
+
+<div class="rich-text">
+<p>This privacy policy applies to knightfoundation.org, owned and operated by John S. and James L. Knight Foundation (&#8220;Knight Foundation&#8221;). This privacy policy describes how Knight Foundation collects and uses the personal information you provide on our web sites: www.knightfoundation.org. It also describes the choices available to you regarding our use of your personal information and how you can access and update this information.</p>
+</div>
+
+<div class="rich-text">
+<p>If you have questions or complaints regarding our privacy policy or practices, please contact us at <a href="/cdn-cgi/l/email-protection#f6819394b69d989f919e82909983989297829f9998d8998491"><span class="__cf_email__" data-cfemail="a5d2c0c7e5cecbccc2cdd1c3cad0cbc1c4d1cccacb8bcad7c2">[email&#160;protected]</span></a>.</p>
+</div>
+
+<div class="rich-text">
+<p>If you have an unresolved privacy or data use concern that we have not addressed satisfactorily, please contact our U.S.-based third party dispute resolution provider (free of charge) at <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__feedback-2Dform.truste.com_watchdog_request&amp;d=DwMFaQ&amp;c=mqWTGnebnQ0J3y6XG9aEosvFBPxQq_1tGPJkSrQ-j2I&amp;r=hK05UDd53URPXHyJ_BrFow&amp;m=ry0pSKfnkDYJstAC2dxZfickTH5DNX83gHkY19drYAA&amp;s=DOhRb-SmYry8ZKtPvyrcrTSIXLPc__NUyyuB53TwIsM&amp;e=" target="_blank" rel="noopener noreferrer">https://feedback-form.truste.com/watchdog/request</a>. &nbsp;</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Acceptance of Privacy Policy</strong></p>
+</div>
+
+<div class="rich-text">
+<p>By using the web site, you signify your acceptance of this privacy policy.If you do not agree to the terms of this privacy policy, please do not use the Website.Your continued use of the Website following the posting of changes to this privacy policy will mean that you accept those changes.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Collection and Use of Personal Information</strong></p>
+</div>
+
+<div class="rich-text">
+<p>We collect your personal information to fulfil our contractual obligations, our statutory obligations and/or the legitimate interests of Knight Foundation and for other purposes for which Knight Foundation has a lawful basis under applicable privacy laws. We collect the following personal information from you:</p>
+</div>
+
+<div class="rich-text">
+<ul><li>Contact Information such as name, email address, mailing address, phone number</li></ul>
+</div>
+
+<div class="rich-text">
+<p>We use this information to:</p>
+</div>
+
+<div class="rich-text">
+<ul><li>Send you requested product or service information</li><li>Respond to customer service requests</li><li>Send you a newsletter</li><li>Respond to your questions and concerns</li></ul>
+</div>
+
+<div class="rich-text">
+<p><strong>Information Sharing</strong></p>
+</div>
+
+<div class="rich-text">
+<p>As a result of grant requests and other correspondence with Knight Foundation, we keep non-financial contact information such as your e-mail address and postal address in a database used by employees, and some contractors and non-profit partners. We collect this information to administer your account and with your consent, to send you marketing emails that might interest you.</p>
+</div>
+
+<div class="rich-text">
+<p>We collect e-mail and postal addresses from a variety of sources including partner organizations and public records lists. With your consent, we may sometimes share information with our grant partners when it&#8217;s related to the content of a program or project and we think you&#8217;ll be interested in the material.</p>
+</div>
+
+<div class="rich-text">
+<p>We will share your personal information with third parties only in the ways that are described in this privacy policy. We do not sell your personal information to third parties.</p>
+</div>
+
+<div class="rich-text">
+<p>We will not share any part of your information with any for-profit or commercial organizations. Your e-mail and postal address may be shared with other non-profit organizations. We will ask for your permission before any personal information is shared with third parties. If you change your mind, you will also be given the choice to opt out from sharing your personal information to third parties.</p>
+</div>
+
+<div class="rich-text">
+<p>We may provide your personal information to companies that provide services to help us with our business activities such as event services and grant evaluation and strategic assessment consultation. These companies are authorized to use your personal information only as necessary to provide these services to us.</p>
+</div>
+
+<div class="rich-text">
+<p>We may also disclose your personal information:</p>
+</div>
+
+<div class="rich-text">
+<ul><li>In certain situations, Knight Foundation may be required to disclose personal information in response to lawful requests by public authorities, including to meet national security or law enforcement requirements.</li><li>As required by law, such as to comply with a subpoena, or similar legal process.</li><li>When we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or respond to a government request.</li><li>If Knight Foundation is involved in a merger, acquisition, or sale of all or a portion of its assets, you will be notified via email and/or a prominent notice on our Web site of any change in ownership or uses of your personal information, as well as any choices you may have regarding your personal information.</li><li>To any other third party with your prior consent to do so.</li></ul>
+</div>
+
+<div class="rich-text">
+<p>Where required in the relevant jurisdiction, we will obtain your consent before sending you promotional emails. We will honor your request to stop sending you publications or e-mail newsletters, and this will not affect your grant-related communications. Please e-mail <a href="/cdn-cgi/l/email-protection#66110304260d080f010e12000913080207120f090848091401"><span class="__cf_email__" data-cfemail="f98e9c9bb99297909e918d9f968c979d988d909697d7968b9e">[email&#160;protected]</span></a> with such requests or you can unsubscribe by following the instructions included in each email.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>User Access and Choice</strong></p>
+</div>
+
+<div class="rich-text">
+<p>Upon request, Knight Foundation will provide you with information about whether we hold any of your personal information. If your personal information changes, or if you no longer desire our service, you may correct, update, amend, delete/remove, or deactivate it by making the change on our member information page or by emailing our Customer Support team at <a href="/cdn-cgi/l/email-protection#a5d2c0c7e5cecbccc2cdd1c3cad0cbc1c4d1cccacb8bcad7c2"><span class="__cf_email__" data-cfemail="92e5f7f0d2f9fcfbf5fae6f4fde7fcf6f3e6fbfdfcbcfde0f5">[email&#160;protected]</span></a> or by contacting us by telephone or postal mail at the contact information listed below. We will respond to your request to access within 30 days.</p>
+</div>
+
+<div class="rich-text">
+<p>We will retain your information for as long as your account is active or as needed to provide you services. We will further retain and use your information as necessary to comply with our legal obligations, resolve disputes, and enforce our agreements. Thereafter, we will delete (or otherwise erase, de-identify or pseudonymise or equivalent) any such personal information except as required or permitted by applicable law or regulation.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Security</strong></p>
+</div>
+
+<div class="rich-text">
+<p>The security of your personal information is important to us. We follow generally accepted standards to protect the personal information submitted to us, both during transmission and once we receive it. No method of transmission over the Internet, or method of electronic storage, is 100% secure, however. Therefore, we cannot guarantee its absolute security.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Tracking Technologies</strong></p>
+</div>
+
+<div class="rich-text">
+<p>Knight Foundation and its partners use cookies or similar technologies to analyze trends, administer the website, track users’ movements around the website, and to gather demographic information about our user base as a whole. You can control the use of cookies at the individual browser level, but if you choose to disable cookies, it may limit your use of certain features or functions on our website or service. &nbsp;</p>
+</div>
+
+<div class="rich-text">
+<p>As is true of most web sites, we gather certain information automatically and store it in log files. This information may include internet protocol (IP) addresses, browser type, internet service provider (ISP), referring/exit pages, operating system, date/time stamp, and/or clickstream data.</p>
+</div>
+
+<div class="rich-text">
+<p>We do not link this automatically collected data to other information we collect about you.</p>
+</div>
+
+<div class="rich-text">
+<p>We partner with a third party to either display advertising on our web site or to manage our advertising on other sites. Our third party partner may use technologies such as cookies to gather information about your activities on this site and other sites in order to provide you advertising based upon your browsing activities and interests. If you wish to not have this information used for the purpose of serving you interest-based ads, you may opt-out by clicking <a href="http://preferences-mgr.truste.com/">here</a>, or if located in the European Union click <a href="http://www.youronlinechoices.eu/">here</a>. Please note this does not opt you out of being served ads. You will continue to receive generic ads.</p>
+</div>
+
+<div class="rich-text">
+<p>Some web browsers may transmit &#8220;do-not-track&#8221; signals to the web sites with which the user communicates, although web browsers incorporate and activate this functionality in different ways, and it is not always clear whether users intend for these signals to be transmitted. There currently is disagreement, including among participants in the leading Internet standards-setting organization, concerning what, if anything, web sites should do when they receive such signals Knight Foundation currently does not take action in response to these signals, but, if and when a standard is established and accepted, we may reassess how to respond to these signals.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Links to 3rd Party Sites</strong></p>
+</div>
+
+<div class="rich-text">
+<p>Our Site includes links to other web sites whose privacy practices may differ from those of Knight Foundation. If you submit personal information to any of those sites, your information is governed by their privacy policies. We encourage you to carefully read the privacy policy of any web site you visit.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Blog</strong></p>
+</div>
+
+<div class="rich-text">
+<p>Our web site offers publicly accessible blogs or community forums. You should be aware that any information you provide in these areas may be read, collected, and used by others who access them. You can request the removal of your personal information from our blog or community forum, by contacting us at <a href="/cdn-cgi/l/email-protection#67100205270c090e000f13010812090306130e080949081500"><span class="__cf_email__" data-cfemail="36415354765d585f515e42505943585257425f595818594451">[email&#160;protected]</span></a>. In some cases, we may not be able to remove your personal information, in which case we will let you know if we are unable to do so and why.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Social Media Widgets</strong></p>
+</div>
+
+<div class="rich-text">
+<p>Our web site includes Social Media Features, such as the Facebook Like button and Widgets, such as the Share this button or Tweet This button, or interactive mini-programs that run on our site. These Features may collect your IP address, which page you are visiting on our site, and may set a cookie to enable the Feature to function properly. Social Media Features and Widgets are either hosted by a third party or hosted directly on our Site. Your interactions with these Features are governed by the privacy policy of the company providing it.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Facebook Connect</strong></p>
+</div>
+
+<div class="rich-text">
+<p>In the case of Newschallenge.org, you can log in to our site using sign-in services such as Facebook Connect. This service will authenticate your identity and provide you the option to share certain personal information with us such as your name and email address to pre-populate our sign up form. Services like Facebook Connect give you the option to post information about your activities on this Web site to your profile page to share with others within your network.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Emails to Friends</strong></p>
+</div>
+
+<div class="rich-text">
+<p>In the case of Newschallenge.org, you can choose to use our page sharing referral service to tell a friend about our site. When you do, we ask you for your friend’s name and email address. We will automatically send your friend a one-time email inviting him or her to visit the site. Knight Foundation stores this information for the sole purpose of sending this one-time email and tracking the success of our referral program. Your friend may contact us via email to <a href="/cdn-cgi/l/email-protection#05726067456e6b6c626d71636a706b6164716c6a6b2b6a7762"><span class="__cf_email__" data-cfemail="addac8cfedc6c3c4cac5d9cbc2d8c3c9ccd9c4c2c383c2dfca">[email&#160;protected]</span></a> to request that we remove this information from our database. (Please include mention of <a href="https://www.knightfoundation.org/Newschallenge.org">Newschallenge.org</a> and the IDEO community database).</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Customer Testimonials/Comments/Reviews</strong></p>
+</div>
+
+<div class="rich-text">
+<p>In the cases of <a href="https://www.knightfoundation.org/Newschallenge.org">Newschallenge.org</a> and Infotoolkit.org, we post customer testimonials/comments/reviews on our web site which may contain personally identifiable information. In every case Knight Foundation staff has obtained the customer&#8217;s consent via email prior to posting the testimonial to post their name along with their testimonial. To request removal of your personal information from Testimonials or comments please contact us via email to <a href="/cdn-cgi/l/email-protection#5f283a3d1f34313638372b39302a313b3e2b36303171302d38"><span class="__cf_email__" data-cfemail="5f283a3d1f34313638372b39302a313b3e2b36303171302d38">[email&#160;protected]</span></a>. Please include the URL of the page with the comment or testimonial in reference.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Public Profiles</strong></p>
+</div>
+
+<div class="rich-text">
+<p>If you create a project on newschallenge.org, the profile you create and any related project proposals will be publically accessible. If you don&#8217;t wish to have a public profile and public project description, you may indicate &#8220;private newschallenge proposal&#8221; and submit it by email to our staff instead. Send it to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="640a011317070c050808010a0301240f0a0d030c10020b110a0005100d0b0a4a0b16034a">[email&#160;protected]</a></p>
+</div>
+
+<div class="rich-text">
+<p><strong>Unauthorized Profiles</strong></p>
+</div>
+
+<div class="rich-text">
+<p>If an account/profile was created on <a href="https://www.knightfoundation.org/newschallenge.org">newschallenge.org</a> without your knowledge/authorization, please contact us at <a href="/cdn-cgi/l/email-protection#65120007250e0b0c020d11030a100b0104110c0a0b4b0a1702"><span class="__cf_email__" data-cfemail="14637176547f7a7d737c60727b617a7075607d7b7a3a7b6673">[email&#160;protected]</span></a> to request removal of the profile.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Children&#8217;s Privacy Protection</strong></p>
+</div>
+
+<div class="rich-text">
+<p>Under Age 13.Knight Foundation does not knowingly collect or retain personal information about persons under 13 years of age. Any person who provides their personal information to Knight Foundation via the web site represents that they are 13 years of age or older. The web site does not knowingly solicit or collect personal information online from children under the age of 13 without prior verifiable parental consent.If we learn that a child under the age of 13 (or such legally required higher age) has submitted personal information online without parental consent, we will take all reasonable measures to delete such information from our databases and to not use such information for any purpose (except where necessary to protect the safety of the child or others as required or allowed by law). If you become aware of any personal information we have collected from children under 13, please contact us at <a href="/cdn-cgi/l/email-protection#afd8cacdefc4c1c6c8c7dbc9c0dac1cbcedbc6c0c181c0ddc8"><span class="__cf_email__" data-cfemail="56213334163d383f313e22303923383237223f393878392431">[email&#160;protected]</span></a>.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>EU Privacy Rights</strong></p>
+</div>
+
+<div class="rich-text">
+<p>Users who reside in the UK or in the European Economic Area have certain rights relating to the personal information we hold in accordance with and subject to the privacy laws to: (i) check whether we hold personal information about you and to access such data (in accordance with our policy); (ii) request the correction of personal information about you that is inaccurate; (iii) have a copy of the personal information we hold about you provided to you or another controller where technically feasible; (iv) request the erasure of your personal information; and (v) request the restriction of processing concerning you. To do so, please send your request to <a href="/cdn-cgi/l/email-protection#0d7a686f4d6663646a65796b627863696c7964626323627f6a"><span class="__cf_email__" data-cfemail="a9decccbe9c2c7c0cec1ddcfc6dcc7cdc8ddc0c6c787c6dbce">[email&#160;protected]</span></a> and write “EU Privacy Rights”.</p>
+</div>
+
+<div class="rich-text">
+<p>You may also make a complaint in accordance with applicable privacy laws to a supervisory authority.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Website Visitors from Outside the United States</strong></p>
+</div>
+
+<div class="rich-text">
+<p>The web site is hosted in the United States. If you are visiting the web site from outside the United States, your personal information may be transferred to, stored and processed in the United States in accordance with this privacy policy and applicable US laws. Please note that data protection and other applicable laws of the United States may not be as comprehensive as those laws or regulations in your country or may otherwise differ from the data protection or consumer protection laws in your country. By using the web site, you consent to transfer of your information to our facilities as described in this privacy policy.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Changes to this Policy</strong></p>
+</div>
+
+<div class="rich-text">
+<p>We may update this privacy policy to reflect changes to our information practices and/or applicable law. If we make any material changes we will notify you by email (sent to the e-mail address specified in your account) or by means of a notice on this web site prior to the change becoming effective. We encourage you to periodically review this page for the latest information on our privacy practices.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Copyright</strong></p>
+</div>
+
+<div class="rich-text">
+<p>Read our <a href="https://www.knightfoundation.org/copyright/">copyright statement.</a></p>
+</div>
+
+<div class="rich-text">
+<p><strong>Fees</strong></p>
+</div>
+
+<div class="rich-text">
+<p>The use of the web site is free for non-commercial use.</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Corrections</strong></p>
+</div>
+
+<div class="rich-text">
+<p>If you are aware of incorrect information on this web site, please send all related information, including a link to the page, to the webmaster (<a href="/cdn-cgi/l/email-protection#cabdafa88aa1a4a3ada2beaca5bfa4aeabbea3a5a4e4a5b8ad"><span class="__cf_email__" data-cfemail="d6a1b3b496bdb8bfb1bea2b0b9a3b8b2b7a2bfb9b8f8b9a4b1">[email&#160;protected]</span></a>).</p>
+</div>
+
+<div class="rich-text">
+<p><strong>Contact</strong></p>
+</div>
+
+<div class="rich-text">
+<p>Knight Foundation, 200 South Biscayne Blvd., Suite 3300, Miami, Fla. 33131-2349</p>
+</div>
+
+<div class="rich-text">
+<p>Phone: (305) 908-2600 (main)</p>
+</div>
+
+<div class="rich-text">
+<p>The foundation is a private, non-profit company registered in the state of Florida. Request an IRS Form 990-PF by calling our accounting department at (305) 908-2613 or see them in our Financials.</p>
+</div>
+
+		</div></div></article><!-- #post-## -->
+
+				</main>
+			</div>
+		</div><!-- #content -->
+
+		<footer class="site-footer">
+	<div class="site-footer__container">
+		<div class="site-footer__nav">
+			<div class="menu-footer-menu-container"><ul id="footer" class="menu"><li id="menu-item-152305" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152305"><a href="https://knightfoundation.org/about/contact/">Contact</a></li>
+<li id="menu-item-152306" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152306"><a href="https://knightfoundation.org/terms/">Terms</a></li>
+<li id="menu-item-152307" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11715 current_page_item menu-item-152307"><a href="https://knightfoundation.org/privacy/" aria-current="page">Privacy</a></li>
+<li id="menu-item-152308" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152308"><a href="https://knightfoundation.org/newsletter/">Subscribe</a></li>
+<li id="menu-item-181740" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-181740"><a href="https://knightfoundation.org/faq-2/">FAQ</a></li>
+</ul></div>		</div>
+		<div class="site-footer__social">
+			<div class="menu-social-menu-container"><ul id="social" class="menu"><li id="menu-item-152314" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-152314"><a href="https://facebook.com/knightfdn">Facebook</a></li>
+<li id="menu-item-152313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-152313"><a href="https://twitter.com/knightfdn">Twitter</a></li>
+<li id="menu-item-152315" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-152315"><a href="https://instagram.com/knightfdn">Instagram</a></li>
+<li id="menu-item-181739" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-181739"><a href="https://vimeo.com/knightfdn">Vimeo</a></li>
+</ul></div>		</div>
+		<div class="site-footer__colophon">
+			<p>
+				Copyright &copy; 2006-2019 John S. and James L. Knight Foundation. Other copyrights apply where noted.				<br>
+				This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.			</p>
+			<div class="site-footer__license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+					<img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png">
+				</a>
+				<a href="https://privacy.truste.com/privacy-seal/validation?rid=79133c65-c979-4b15-8a3a-33efc1bb705d" target="_blank">
+					<img src="https://privacy-policy.truste.com/privacy-seal/seal?rid=79133c65-c979-4b15-8a3a-33efc1bb705d" alt="TRUSTe">
+				</a>
+				<div class="vip">
+					<img src="/wp-content/themes/knight-foundation-app/client/src/images/logo-dark.png" alt="Powered by WordPress VIP"/>
+					<span>Powered by WordPress VIP</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer><!-- .site-footer -->
+	</div><!-- #page -->
+
+
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script id='knight-foundation-app-global-js-js-extra'>
+var knightConfig = {"restBase":"https:\/\/knightfoundation.org\/wp-json\/","timezone":"America\/New_York"};
+</script>
+<script src='https://knightfoundation.org/wp-content/themes/knight-foundation-app/client/build/js/global.e00b3b1977b3e603ab9d.bundle.min.js?ver=1.0.6' id='knight-foundation-app-global-js-js'></script>
+<script src='https://knightfoundation.org/wp-includes/js/wp-embed.min.js?ver=5.5' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-202033.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.8.1',blog:'156721592',post:'11715',tz:'-4',srv:'knightfoundation.org'} ]);
+	_stq.push([ 'clickTrackerInit', '156721592', '11715' ]);
+</script>
+
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"b4222721b8","applicationID":"204779344","transactionName":"NlABZRRZDRYFARJaCQ8aIlISUQwLSxUUUhYRUBE=","queueTime":0,"applicationTime":91,"atts":"GhcWE1xDHklGA0QJHRxI","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+	</html>
+<!-- Feature content contains HTML for ENTIRE page. -->
